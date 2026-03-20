@@ -25,7 +25,7 @@
 		text-align: center;
 
 		& + #main {
-			padding-top: 4.25em;
+			margin-top: 4.25em;
 		}
 
 		ul {
@@ -90,7 +90,7 @@
 			display: none;
 
 			& + #main {
-				padding-top: 0;
+				margin-top: 0;
 			}
 		}
 	}

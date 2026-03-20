@@ -34,10 +34,10 @@
 		}
 
 	body {
-		background-color: _palette(bg);
+		background-color: #1A1F36;
 		@include vendor('background-image', (
 			'url("images/overlay.png")',
-			'linear-gradient(45deg, #{_palette(bg1)} 15%, #{_palette(bg2) 85%})',
+			'linear-gradient(180deg, #1A1F36 0%, #313a61 100%)',
 		));
 
 		// Stops initial animations until page loads.
