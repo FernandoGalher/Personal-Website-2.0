@@ -14,6 +14,96 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 		<link rel="icon" type="image/svg+xml" href="images/UpwardDev SVG.svg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.process-overview .process-intro {
+				max-width: 52rem;
+				margin: 0 auto 3rem auto;
+			}
+
+			.process-overview .features {
+				margin-bottom: 0;
+			}
+
+			.process-overview .features > li {
+				position: relative;
+				text-align: center;
+				padding: 1.5rem 1.35rem;
+				background: rgba(140, 201, 240, 0.14);
+				border: 1px solid rgba(140, 201, 240, 0.26);
+				border-radius: 18px;
+				box-shadow: 0 12px 28px rgba(15, 20, 45, 0.12);
+			}
+
+			.process-overview .features > li > h3,
+			.process-overview .features > li > p,
+			.process-overview .features > li > .icon {
+				text-align: center;
+			}
+
+			.process-overview .features > li > .icon.major {
+				width: 2.2em;
+				height: 2.2em;
+				line-height: 2.2em;
+				font-size: 1rem;
+				margin-bottom: 0.8rem;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 0;
+				border: 0;
+				display: block;
+				background: transparent;
+				box-shadow: none;
+			}
+
+			.process-overview .features > li > .icon.major:before {
+				font-size: 1.55rem;
+				width: auto;
+				height: auto;
+				line-height: 1;
+				border: 0;
+				border-radius: 0;
+			}
+
+			.process-overview .features > li > h3 {
+				margin-bottom: 0.7rem;
+				font-size: 1.15rem;
+			}
+
+			.process-overview .features > li > p {
+				margin-bottom: 1rem;
+				font-size: 0.98rem;
+				line-height: 1.75;
+			}
+
+			.process-step {
+				margin-top: 1rem;
+				padding-top: 1rem;
+				border-top: 0;
+				text-align: center;
+			}
+
+			.process-step:before {
+				content: '';
+				display: block;
+				width: 4.5rem;
+				margin: 0 auto 0.85rem auto;
+				border-top: solid 1px rgba(255, 255, 255, 0.2);
+			}
+
+			.process-number {
+				display: block;
+				margin: 0 0 0.45rem 0;
+				font-size: 0.95rem;
+				font-weight: 700;
+			}
+
+			.process-step p {
+				margin: 0;
+				font-size: 0.96rem;
+				line-height: 1.75;
+			}
+
+		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload subpage">
@@ -36,13 +126,63 @@
 					<div id="main">
 
 						<!-- Content -->
-							<section id="content" class="main">
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<h2>Ver cómo trabajamos</h2>
-								<p>UpwardDev trabaja con los negocios de una manera práctica y estructurada. Comenzamos por entender cómo opera actualmente tu negocio, dónde existen fricciones y qué herramientas o procesos necesitan mejorar. A partir de ahí, damos forma al apoyo según lo que sea útil ahora, no en torno a complejidad innecesaria.</p>
-								<p>Nuestro trabajo se centra en la claridad, la organización y el progreso constante. Esto puede incluir revisar flujos de trabajo, mejorar la configuración digital, ayudar a definir responsabilidades o crear una estructura operativa más confiable. Cada paso está diseñado para que el trabajo diario sea más fácil de gestionar y de hacer crecer.</p>
-								<h2>Qué puedes esperar</h2>
-								<p>Puedes esperar un proceso tranquilo y colaborativo, con comunicación clara y recomendaciones prácticas. UpwardDev ayuda a identificar qué es lo más importante, organizar los siguientes pasos y apoyar la implementación de una forma que se ajuste a la etapa de tu negocio. El objetivo no es solo el cambio, sino un cambio útil que fortalezca la manera en que funciona tu negocio.</p>
+							<section id="content" class="main special process-overview">
+								<header class="major">
+									<h2>¿Cómo trabajamos?</h2>
+									<p class="process-intro">Nuestro proceso está diseñado para entender primero lo que tu negocio necesita, organizar el trabajo con claridad y desarrollar soluciones de forma ordenada y profesional.</p>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon major solid fa-search"></span>
+										<h3>Descubrimos</h3>
+										<p>Primero conocemos tu negocio, lo que necesitas y lo que buscas lograr.</p>
+										<div class="process-step">
+											<span class="process-number">01</span>
+											<p>Esta etapa nos ayuda a entender tu situación antes de proponer cualquier solución.</p>
+										</div>
+									</li>
+									<li>
+										<span class="icon major fa-clipboard"></span>
+										<h3>Evaluamos</h3>
+										<p>Revisamos la información y analizamos qué hace falta y qué puede mejorarse.</p>
+										<div class="process-step">
+											<span class="process-number">02</span>
+											<p>Analizamos cuál sería el enfoque más útil para tu negocio según su momento y sus prioridades.</p>
+										</div>
+									</li>
+									<li>
+										<span class="icon major solid fa-layer-group"></span>
+										<h3>Organizamos</h3>
+										<p>Estructuramos el proyecto, las prioridades y los próximos pasos.</p>
+										<div class="process-step">
+											<span class="process-number">03</span>
+											<p>Una vez definido el camino, damos orden al trabajo para que todo tenga claridad desde el inicio.</p>
+										</div>
+									</li>
+									<li>
+										<span class="icon major solid fa-rocket"></span>
+										<h3>Ejecutamos</h3>
+										<p>Desarrollamos e implementamos la solución acordada según el alcance del proyecto.</p>
+										<div class="process-step">
+											<span class="process-number">04</span>
+											<p>Mantenemos claridad en cada etapa del trabajo para avanzar de forma ordenada y profesional.</p>
+										</div>
+									</li>
+									<li>
+										<span class="icon major fa-handshake"></span>
+										<h3>Finalizamos</h3>
+										<p>Revisamos detalles, realizamos ajustes y acompañamos el cierre del proyecto.</p>
+										<div class="process-step">
+											<span class="process-number">05</span>
+											<p>Nos aseguramos de que el resultado quede claro, bien encaminado y listo para seguir avanzando.</p>
+										</div>
+									</li>
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="book-a-consultation.html" class="button primary">Agenda una cita</a></li>
+									</ul>
+								</footer>
 							</section>
 
 					</div>

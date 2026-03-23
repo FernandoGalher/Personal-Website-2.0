@@ -17,6 +17,11 @@
 		<style>
 			.services-overview .features > li {
 				text-align: left;
+				padding: 1.6rem 1.4rem;
+				background: rgba(140, 201, 240, 0.14);
+				border: 1px solid rgba(140, 201, 240, 0.26);
+				border-radius: 18px;
+				box-shadow: 0 12px 28px rgba(15, 20, 45, 0.12);
 			}
 
 			.services-overview .features > li > h3,
@@ -25,8 +30,35 @@
 				text-align: center;
 			}
 
+			.services-overview .features > li > .icon.major {
+				width: auto;
+				height: auto;
+				margin: 0 auto 0.9rem auto;
+				padding: 0;
+				border: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: transparent;
+				box-shadow: none;
+			}
+
+			.services-overview .features .image-icon img {
+				width: 2rem;
+				height: 2rem;
+				filter: brightness(0) saturate(100%) invert(79%) sepia(26%) saturate(645%) hue-rotate(172deg) brightness(99%) contrast(91%);
+			}
+
+			.services-overview .features > li > h3 {
+				margin-bottom: 0.8rem;
+			}
+
+			.services-overview .features > li > p {
+				margin-bottom: 1.15rem;
+			}
+
 			.service-details {
-				margin-top: 2rem;
+				margin-top: 1.25rem;
 				display: grid;
 				gap: 1.25rem;
 			}
