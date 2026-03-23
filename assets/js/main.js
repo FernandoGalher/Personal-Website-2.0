@@ -122,11 +122,11 @@
 
 	// Rotating footer quote.
 		var purposeQuotes = [
-			'"If you fail to plan, you are planning to fail." | Probably Benjamin Franklin',
-			'"Chance favors the prepared mind." | Louis Pasteur',
-			'"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." | Sun Tzu',
-			'"Well begun is half done." | Probably Aristotle',
-			'"By failing to prepare, you are preparing to fail." | Probably Benjamin Franklin'
+			'"Si no planificas, estás planeando fracasar." | Probablemente Benjamin Franklin',
+			'"El azar favorece a la mente preparada." | Louis Pasteur',
+			'"Los guerreros victoriosos ganan primero y luego van a la guerra, mientras que los derrotados van primero a la guerra y luego buscan ganar." | Sun Tzu',
+			'"Lo que bien empieza, está medio hecho." | Probablemente Aristóteles',
+			'"Al no prepararte, te estás preparando para fracasar." | Probablemente Benjamin Franklin'
 		];
 
 		var $purposeQuote = $('.js-purpose-quote');
