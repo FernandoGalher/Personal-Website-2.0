@@ -127,40 +127,53 @@
 		}
 
 		@include breakpoint('<=small') {
-			display: block;
-			width: 20em;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.65em;
+			width: 100%;
 			max-width: 100%;
 			margin: 0 auto _size(element-margin) auto;
 
 			li {
+				padding: 1em 0.85em;
+				box-shadow: none;
+				border-radius: _size(border-radius);
+
 				&:first-child {
-					border-bottom-left-radius: 0;
+					border-bottom-left-radius: _size(border-radius);
 					border-top-right-radius: _size(border-radius);
 				}
 
 				&:last-child {
-					border-top-right-radius: 0;
+					grid-column: 1 / -1;
+					border-top-right-radius: _size(border-radius);
 					border-bottom-left-radius: _size(border-radius);
 				}
 
 				.icon {
 					&:before {
-						font-size: 3.75rem;
+						font-size: 2.35rem;
 					}
 				}
 
 				strong, b {
-					font-size: 2.5em;
+					font-size: 1.9em;
 				}
 
 				.stat-title {
-					font-size: 1.2em;
+					font-size: 1em;
 				}
 
 				.stat-head {
 					min-height: 0;
-					padding-bottom: 1em;
-					margin-bottom: 1.25em;
+					padding-bottom: 0.75em;
+					margin-bottom: 0.8em;
+				}
+
+				p {
+					margin-top: 0.6em;
+					font-size: 0.8em;
+					line-height: 1.4;
 				}
 			}
 		}

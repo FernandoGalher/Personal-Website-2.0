@@ -33,19 +33,64 @@
 
 		if ($nav.length > 0) {
 
-			// Shrink effect.
-				$main
-					.scrollex({
-						mode: 'top',
-						enter: function() {
-							$nav.addClass('alt');
-							$body.addClass('nav-blur-visible');
-						},
-						leave: function() {
-							$nav.removeClass('alt');
-							$body.removeClass('nav-blur-visible');
-						},
+			var $navList = $nav.find('ul');
+			var navTop = $nav.offset().top;
+			var setActiveNavItem = function($target, shouldAnimate) {
+
+				if ($target.length === 0)
+					return;
+
+				$nav_a.removeClass('active');
+				$target.addClass('active');
+				syncActiveNavItem($target, shouldAnimate);
+
+			};
+
+			var syncActiveNavItem = function($target, shouldAnimate) {
+
+				if ($target.length === 0 || !window.matchMedia('(max-width: 736px)').matches || $navList.length === 0)
+					return;
+
+				var target = $target.get(0),
+					container = $navList.get(0);
+
+				if (!target || !container)
+					return;
+
+				var targetLeft = target.offsetLeft,
+					targetRight = targetLeft + target.offsetWidth,
+					containerLeft = container.scrollLeft,
+					containerRight = containerLeft + container.clientWidth,
+					padding = 12,
+					nextLeft = containerLeft;
+
+				if (targetLeft - padding < containerLeft)
+					nextLeft = Math.max(0, targetLeft - padding);
+				else if (targetRight + padding > containerRight)
+					nextLeft = targetRight - container.clientWidth + padding;
+
+				if (typeof container.scrollTo === 'function')
+					container.scrollTo({
+						left: nextLeft,
+						behavior: shouldAnimate ? 'smooth' : 'auto'
 					});
+				else
+					container.scrollLeft = nextLeft;
+
+			};
+
+			var updatePinnedNav = function() {
+
+				if ($window.scrollTop() > navTop) {
+					$nav.addClass('alt');
+					$body.addClass('nav-blur-visible');
+				}
+				else {
+					$nav.removeClass('alt');
+					$body.removeClass('nav-blur-visible');
+				}
+
+			};
 
 			// Links.
 				var $nav_a = $nav.find('a');
@@ -70,8 +115,9 @@
 
 						// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
 							$this
-								.addClass('active')
 								.addClass('active-locked');
+
+							setActiveNavItem($this, true);
 
 					})
 					.each(function() {
@@ -102,8 +148,7 @@
 									// No locked links? Deactivate all links and activate this section's one.
 										if ($nav_a.filter('.active-locked').length == 0) {
 
-											$nav_a.removeClass('active');
-											$this.addClass('active');
+											setActiveNavItem($this, true);
 
 										}
 
@@ -115,6 +160,29 @@
 							});
 
 					});
+
+				$window.on('scroll resize', function() {
+
+					if (!$nav.hasClass('alt'))
+						navTop = $nav.offset().top;
+
+					updatePinnedNav();
+
+					if (!window.matchMedia('(max-width: 736px)').matches)
+						return;
+
+					var scrollBottom = $window.scrollTop() + $window.height(),
+						documentBottom = $(document).height();
+
+					if (documentBottom - scrollBottom <= 4)
+						setActiveNavItem($nav_a.last(), false);
+					else
+						syncActiveNavItem($nav_a.filter('.active').first(), false);
+
+				});
+
+				updatePinnedNav();
+				syncActiveNavItem($nav_a.filter('.active').first(), false);
 
 		}
 

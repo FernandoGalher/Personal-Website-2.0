@@ -37,6 +37,7 @@
 				border-radius: 100%;
 				width: 16em;
 				height: 16em;
+				aspect-ratio: 1;
 				@include vendor('object-fit', 'cover');
 				@include vendor('object-position', '60% center');
 			}
@@ -80,6 +81,7 @@
 
 				img {
 					width: 12em;
+					height: 12em;
 				}
 			}
 		}

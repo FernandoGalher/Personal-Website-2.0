@@ -46,3 +46,14 @@
 			}
 
 	}
+
+	@include breakpoint('<=small') {
+		body {
+			&:before {
+				left: 0;
+				width: 100%;
+				max-width: 100%;
+				@include vendor('transform', 'none');
+			}
+		}
+	}

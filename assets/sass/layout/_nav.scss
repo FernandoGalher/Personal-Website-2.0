@@ -158,10 +158,52 @@
 		}
 
 		@include breakpoint('<=small') {
-			display: none;
+			position: relative;
+			left: auto;
+			top: auto;
+			@include vendor('transform', 'none');
+			width: 100%;
+			max-width: 100%;
+			padding: 0.75em 0.65em;
 
 			& + #main {
 				margin-top: 0;
+			}
+
+			ul {
+				display: flex;
+				@include vendor('justify-content', 'flex-start');
+				overflow-x: auto;
+				overflow-y: hidden;
+				scrollbar-width: none;
+				-webkit-overflow-scrolling: touch;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+
+				li {
+					@include vendor('flex', '0 0 auto');
+					margin: 0 0.2em;
+
+					a {
+						white-space: nowrap;
+						font-size: 0.95em;
+						padding: 0 1em;
+					}
+				}
+			}
+
+			&.alt {
+				width: 100%;
+				max-width: 100%;
+				padding: 0.65em;
+				background-color: transparent;
+				box-shadow: none;
+
+				ul li a {
+					font-size: 0.9em;
+				}
 			}
 		}
 	}
